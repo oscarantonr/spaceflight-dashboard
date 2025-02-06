@@ -1,0 +1,115 @@
+<section class="bg-gray-50 p-12">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 h-full">
+    <div
+      class="bg-white p-6 rounded-lg shadow-lg flex flex-col justify-center h-full col-span-1"
+    >
+      <app-title title="Register" class="ml-[-15px]">
+        <img
+          src="https://images.emojiterra.com/google/android-12l/512px/1f680.png"
+          alt="new user image"
+          class="md:hidden h-10 w-10 object-cover m-2 rounded-xl"
+        />
+      </app-title>
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit()" autocomplete="off">
+        <div class="mb-4">
+          <label for="name" class="block text-gray-700 text-sm font-bold mb-2"
+            >Name and surname</label
+          >
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="form-control shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            formControlName="name"
+            placeholder="Enter name"
+            required
+          />
+          @if(nameFieldInvalid){
+          <span class="form-text text-red-500">
+            Mínimo 5 caracteres y máximo 20
+          </span>
+          }
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block text-gray-700 text-sm font-bold mb-2"
+            >Email address</label
+          >
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-control shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            formControlName="email"
+            placeholder="Enter email"
+            required
+          />
+          @if(emailFieldInvalid){
+          <span class="form-text text-red-500"> Email no válido </span>
+          }
+        </div>
+        <div class="mb-4">
+          <label
+            for="password"
+            class="block text-gray-700 text-sm font-bold mb-2"
+            >Password</label
+          >
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="form-control shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            formControlName="password"
+            placeholder="Enter password"
+            required
+          />
+          @if(passwordFieldInvalid){
+          <span class="form-text text-red-500"> Campo requerido </span>
+          }
+        </div>
+        <div class="mb-4">
+          <label
+            for="password2"
+            class="block text-gray-700 text-sm font-bold mb-2"
+            >Confirm Password</label
+          >
+          <input
+            type="password"
+            id="password2"
+            name="password2"
+            class="form-control shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            formControlName="password2"
+            placeholder="Confirm password"
+            required
+          />
+          @if(password2FieldInvalid){
+          <span class="form-text text-red-500"> Campo requerido </span>
+          }
+        </div>
+        <div class="flex items-center justify-between">
+          <button
+            class="bg-cyan-500 hover:bg-cyan-700 text-white font-bold mt-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div
+      class="bg-gray-100 p-6 rounded-lg shadow-lg flex flex-col justify-center h-full col-span-2"
+    >
+      <div class="text-center">
+        <h1 class="text-3xl font-bold mb-4">Welcome to the platform</h1>
+        <p class="text-gray-600 mb-6">
+          Create a new user and start using the platform
+        </p>
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Cartoon-Astronaut.svg/497px-Cartoon-Astronaut.svg.png?20230116213611"
+          alt="new user image"
+          class="object-cover mt-2 rounded-xl mx-auto aspect-[1/1]"
+        />
+      </div>
+    </div>
+  </div>
+</section>

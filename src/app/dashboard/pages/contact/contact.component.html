@@ -1,0 +1,78 @@
+<app-title title="Contact"></app-title>
+<section class="mx-6 grid grid-cols-1 gap-4 md:grid-cols-3">
+  <div class="md:col-span-1">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" autocomplete="off">
+      <div class="row mb-3">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="name"
+          >Name</label
+        >
+        <input
+          type="text"
+          class="form-control shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="name"
+          formControlName="name"
+          placeholder="Enter name"
+        />
+        @if(messageFieldInvalid){
+        <span class="form-text text-red-500">
+          Mínimo 5 caracteres y máximo 20
+        </span>
+        }
+      </div>
+      <div class="row mb-3">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="email"
+          >Email address</label
+        >
+        <input
+          type="email"
+          class="form-control shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="email"
+          formControlName="email"
+          aria-describedby="emailHelp"
+          placeholder="Enter email"
+        />
+        @if(messageFieldInvalid){
+        <span class="form-text text-red-500"> Campo requerido </span>
+        }
+      </div>
+
+      <div class="row mb-3">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="message"
+          >Message</label
+        >
+        <textarea
+          type="text"
+          class="form-control shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="message"
+          formControlName="message"
+          placeholder="Enter message"
+        ></textarea>
+        @if(messageFieldInvalid){
+        <span class="form-text text-red-500"> Campo requerido </span>
+        }
+      </div>
+      <div class="row">
+        <div class="col">
+          <button
+            class="btn btn-primary float-end bg-cyan-500 rounded-md mt-3 p-3 text-white font-bold hover:bg-cyan-700 focus:outline-none focus:shadow-outline"
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="md:col-span-2 mx-2">
+    <!-- <app-maps></app-maps> -->
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d49693.480876552945!2d-77.0673519!3d38.8818439!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b77f50ae6f01%3A0x676e7adc4032899b!2sNASA!5e0!3m2!1ses!2ses!4v1738661425766!5m2!1ses!2ses"
+      width="600"
+      height="450"
+      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+</section>

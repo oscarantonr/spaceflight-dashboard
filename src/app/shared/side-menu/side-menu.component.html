@@ -1,0 +1,27 @@
+<aside
+  class="ml-[-100%] fixed z-10 top-0 pb-3 px-6 w-full flex flex-col h-screen border-r bg-white transition duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%]"
+>
+  <div class="-mx-6 px-6 py-4">
+    <a href="#" title="home">
+      <img
+        src="https://img.icons8.com/color/512/nasa.png"
+        class="w-32"
+        alt="nasa logo"
+      />
+    </a>
+  </div>
+
+  <ul class="space-y-2 tracking-wide mt-8">
+    @for(item of menuItems; track $index){
+    <li>
+      <a
+        [routerLink]="item.path"
+        href="#"
+        class="relative px-4 py-3 flex items-center space-x-4 rounded-xl text-white bg-gradient-to-r from-sky-600 to-cyan-400"
+      >
+        <span class="-mr-1 font-medium">{{ item.title }}</span>
+      </a>
+    </li>
+    }
+  </ul>
+</aside>

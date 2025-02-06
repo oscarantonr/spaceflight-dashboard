@@ -1,0 +1,12 @@
+@for (item of menuItems; track $index) {
+<a
+  [routerLink]="item.path"
+  href="#"
+  class="cursor-pointer"
+  routerLinkActive="border-b-2 border-cyan-500 pb-1 font-bold"
+>
+  <span class="flex-row items-center space-x-4 p-2">
+    {{ item.title }}
+  </span>
+</a>
+}
