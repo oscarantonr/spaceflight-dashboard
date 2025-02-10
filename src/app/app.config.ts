@@ -3,6 +3,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { provideRouter, withViewTransitions } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { routes } from './app.routes';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 
 export const appConfig: ApplicationConfig = {
@@ -12,6 +13,6 @@ export const appConfig: ApplicationConfig = {
       skipInitialTransition: true,
     })),
     provideHttpClient(),
-    importProvidersFrom(ReactiveFormsModule),
+    importProvidersFrom(ReactiveFormsModule), provideAnimationsAsync(),
   ]
 };

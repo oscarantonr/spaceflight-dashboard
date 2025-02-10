@@ -29,6 +29,11 @@ export const routes: Routes = [
                 loadComponent: () => import('./dashboard/pages/blog/blog.component'),
             },
             {
+                path: 'favourite-blogs',
+                title: 'Favourite Blogs',
+                loadComponent: () => import('./dashboard/pages/favourite-blogs/favourite-blogs.component'),
+            },
+            {
                 path: 'contact',
                 title: 'Contact',
                 loadComponent: () => import('./dashboard/pages/contact/contact.component'),

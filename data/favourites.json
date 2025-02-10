@@ -1,0 +1,61 @@
+{
+  "favourites": [
+    {
+      "id": "1475",
+      "title": "Busy Day of Research, Lab Upkeep, and Cargo Ops on Station",
+      "authors": [
+        {
+          "name": "NASA",
+          "socials": null
+        }
+      ],
+      "url": "https://blogs.nasa.gov/spacestation/2025/02/06/busy-day-of-research-lab-upkeep-and-cargo-ops-on-station/",
+      "image_url": "https://blogs.nasa.gov/spacestation/wp-content/uploads/sites/240/2025/02/blog_iss072e576545.jpg",
+      "news_site": "NASA",
+      "summary": "The Expedition 72 crew focused on space biology, physics research, and cargo operations throughout the International Space Station on Thursday. The orbital residents also performed maintenance and documentation activities ensuring the microgravity research laboratory remains in tip-top shape. NASA Flight Engineers Nick Hague and Don Pettit took turns during their shifts examining and videotaping the …",
+      "published_at": "2025-02-06T21:34:24Z",
+      "updated_at": "2025-02-06T21:40:10.709461Z",
+      "featured": false,
+      "launches": [],
+      "events": []
+    },
+    {
+      "id": "1476",
+      "title": "Relaxation, Housekeeping Wrap Up Work Week Aboard the Station",
+      "authors": [
+        {
+          "name": "NASA",
+          "socials": null
+        }
+      ],
+      "url": "https://blogs.nasa.gov/spacestation/2025/02/07/relaxation-housekeeping-wrap-up-work-week-aboard-the-station/",
+      "image_url": "https://blogs.nasa.gov/spacestation/wp-content/uploads/sites/240/2025/02/blog_iss072e595426.jpg",
+      "news_site": "NASA",
+      "summary": "The Expedition 72 crew wrapped up the work week with housekeeping duties and relaxation following several days of spacewalk cleanup activities and advanced research aboard the International Space Station. Station Commander Suni Williams and Flight Engineer Butch Wilmore, both NASA astronauts, were off duty on Friday after stowing spacewalk tools and deconfiguring spacesuits earlier in …",
+      "published_at": "2025-02-07T18:34:53Z",
+      "updated_at": "2025-02-07T18:40:11.149973Z",
+      "featured": false,
+      "launches": [],
+      "events": []
+    },
+    {
+      "id": 1471,
+      "title": "Astronauts Relax After Spacewalk, Cosmonauts Work Physics and Exercise Research",
+      "authors": [
+        {
+          "name": "NASA",
+          "socials": null
+        }
+      ],
+      "url": "https://blogs.nasa.gov/spacestation/2025/01/31/astronauts-relax-after-spacewalk-cosmonauts-work-physics-and-exercise-research/",
+      "image_url": "https://blogs.nasa.gov/spacestation/wp-content/uploads/sites/240/2025/01/blog_iss072e574907.jpg",
+      "news_site": "NASA",
+      "summary": "Two spacewalkers and their assisting crew members took a half-day off on Friday following the previous day’s excursion to remove radio hardware and swab for microbes outside the International Space Station. The rest of the Expedition 72 crew researched plasma physics, took a physical fitness test, and ensured the upkeep of the orbital outpost. Station …",
+      "published_at": "2025-01-31T19:07:45Z",
+      "updated_at": "2025-01-31T19:10:10.071474Z",
+      "featured": false,
+      "launches": [],
+      "events": []
+    }
+  ]
+}
