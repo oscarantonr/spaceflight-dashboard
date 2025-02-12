@@ -31,7 +31,6 @@ export class FavouriteService {
         return this.http.delete<FavouriteBlogs>(`${this.apiUrl}/${id}`)
             .pipe(
                 catchError(error => {
-                    console.error('Error removing favourite:', error);
                     return of(false);
                 }),
                 map(resp => true)

@@ -31,7 +31,6 @@ export class SpaceflightDataService {
         return this.http.get<Blogs>(`https://api.spaceflightnewsapi.net/v4/blogs/?search=${words}`)
             .pipe(
                 map(data => {
-                    console.log(data.results)
                     this.searchResultsSubject.next(data);
                     return data;
                 })

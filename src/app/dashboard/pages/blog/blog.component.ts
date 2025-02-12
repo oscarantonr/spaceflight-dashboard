@@ -68,7 +68,7 @@ export default class BlogComponent {
   goToBlog(id: number) {
     this.blogService.getBlogById(id)
       .pipe(
-        map(data => { console.log("Compo", data); return data; })
+        map(data => { return data; })
       ).subscribe();
   }
 
@@ -79,7 +79,6 @@ export default class BlogComponent {
   }
 
   toggleFavourite(blog: any): void {
-    console.log('Favourite', this.favouriteService.isFavourite(blog, this.favourites))
     if (this.favouriteService.isFavourite(blog, this.favourites)) {
       this.favouriteService.removeFavourite(blog.id).subscribe(() => {
         this.loadFavourites();

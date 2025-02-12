@@ -1,8 +1,9 @@
 <app-title title="Favourite Blogs"></app-title>
-<section class="">
+@if(favouriteBlogs.length > 0 && !specialCondition){
+<section>
   <div
     cdkDropList
-    class="mx-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
+    class="mx-4 grid grid-cols-1 gap-4 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
     cdkDropListOrientation="mixed"
     (cdkDropListDropped)="drop($event)"
   >
@@ -16,12 +17,7 @@
           alt="blog image"
           class="w-full h-48 object-cover mt-2 rounded-xl"
         />
-        <div class="absolute top-7 right-5 bg-gray-100 p-1 rounded-full">
-          <!-- <img
-        [src]="isFavourite(blog()) ? 'heart-red.svg' : 'heart.svg'"
-        class="w-8 h-8 ml-auto cursor-pointer"
-        (click)="toggleFavourite(blog())"
-      /> -->
+        <div class="absolute top-7 right-5 p-1 rounded-full">
           <app-favourite-button
             [blog]="blog"
             [alreadyFavourite]="true"
@@ -42,3 +38,35 @@
     }
   </div>
 </section>
+} @else if (favouriteBlogs.length > 0 && specialCondition) { @for (blog of
+favouriteBlogs; track $index) {
+<section class="mx-6 my-2 grid grid-cols-1">
+  <span
+    class="relative flex items-center justify-around p-4 mb-4 bg-slate-200 shadow rounded-xl hover:bg-slate-100"
+  >
+    <img
+      [srcset]="blog.image_url"
+      alt="blog image"
+      class="h-16 w-16 object-cover rounded-xl"
+    />
+    <a
+      class="flex-grow text-md line-clamp-2 font-semibold text-gray-600 hover:underline cursor-pointer text-center mx-6 max-w-xs max-h-16 overflow-hidden"
+      [routerLink]="['/dashboard/blog', blog.id]"
+      (click)="onLinkClick()"
+    >
+      {{ blog.title }}
+    </a>
+    <div class="items-center h-8 w-8 flex justify-center">
+      <app-favourite-button
+        [blog]="blog"
+        [alreadyFavourite]="true"
+        (favouriteToggled)="loadFavourites()"
+      ></app-favourite-button>
+    </div>
+  </span>
+</section>
+} } @else {
+<div class="flex justify-center items-center h-96">
+  <p class="text-2xl text-gray-400">No favourite blogs found</p>
+</div>
+}

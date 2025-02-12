@@ -30,7 +30,6 @@ export class FavouriteButtonComponent {
   constructor(private favouriteService: FavouriteService) { }
 
   isFavourite(): boolean {
-    console.log("Favourite", this.blog)
     return this.alreadyFavourite || this.favouriteService.isFavourite(this.blog as FavouriteBlogs, this.favouriteService.favouritesSubject.value);
   }
 

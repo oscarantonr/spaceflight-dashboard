@@ -1,5 +1,6 @@
 <img
-  [src]="isFavourite() ? 'heart-red.svg' : 'heart.svg'"
-  class="w-8 h-8 ml-auto cursor-pointer"
+  [srcset]="isFavourite() ? 'heart-red.svg' : 'heart.svg'"
+  class="w-8 h-8 ml-auto cursor-pointer transform transition-transform duration-300 hover:scale-125"
+  [title]="isFavourite() ? 'Remove from favourites' : 'Add to favourites'"
   (click)="toggleFavourite()"
 />

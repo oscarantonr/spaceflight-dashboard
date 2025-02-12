@@ -5,10 +5,16 @@ import {
   moveItemInArray
 } from '@angular/cdk/drag-drop';
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import {
+  Component,
+  Inject,
+  OnInit,
+  Optional
+} from '@angular/core';
 import { FavouriteBlogs } from '../../../interfaces/favourite-blogs.interface';
 import { FavouriteButtonComponent } from '../../../shared/favourite-button/favourite-button.component';
 import { FavouriteService } from '../../../services/favourite.service';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { RouterModule } from '@angular/router';
 import { TitleComponent } from '../../../shared/title/title.component';
 
@@ -18,9 +24,19 @@ import { TitleComponent } from '../../../shared/title/title.component';
   templateUrl: './favourite-blogs.component.html',
   styles: ``
 })
-export default class FavouriteBlogsComponent {
-  private favouriteService = inject(FavouriteService);
+export default class FavouriteBlogsComponent implements OnInit {
   favouriteBlogs: FavouriteBlogs[] = [];
+  specialCondition: boolean = false;
+
+  constructor(
+    private favouriteService: FavouriteService,
+    @Optional() @Inject(MAT_DIALOG_DATA) public data: any,
+    @Optional() private dialogRef: MatDialogRef<FavouriteBlogsComponent>
+  ) {
+    if (data) {
+      this.specialCondition = data.specialCondition;
+    }
+  }
 
   ngOnInit(): void {
     this.loadFavourites();
@@ -50,5 +66,11 @@ export default class FavouriteBlogsComponent {
 
   drop(event: CdkDragDrop<FavouriteBlogs[]>) {
     moveItemInArray(this.favouriteBlogs, event.previousIndex, event.currentIndex);
+  }
+
+  onLinkClick(): void {
+    if (this.specialCondition) {
+      this.dialogRef.close();
+    }
   }
 }

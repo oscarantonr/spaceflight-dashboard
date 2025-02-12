@@ -8,7 +8,7 @@ import {
   OnChanges,
   output,
   SimpleChanges
-  } from '@angular/core';
+} from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SpaceflightDataService } from '../../services/spaceflight.service';
 
@@ -29,7 +29,6 @@ export class SearchResultsComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['showResults'] && this.showResults()) {
       this.searchService.searchResults$.subscribe(data => {
-        console.log('Search results 1:', data?.results);
 
         if (data && Array.isArray(data.results)) {
           this.blogsResults = data.results;

@@ -15,13 +15,6 @@ export const routes: Routes = [
                 path: 'blogs',
                 title: 'Blogs',
                 loadComponent: () => import('./dashboard/pages/blogs/blogs.component'),
-                // children: [
-                //     {
-                //         path: ':id',
-                //         title: 'Blog',
-                //         loadComponent: () => import('./dashboard/pages/blog/blog.component'),
-                //     }
-                // ]
             },
             {
                 path: 'blog/:id',

@@ -6,7 +6,7 @@ import {
   FormGroup,
   ReactiveFormsModule,
   Validators
-  } from '@angular/forms';
+} from '@angular/forms';
 import { TitleComponent } from '../../../shared/title/title.component';
 import { ValidatorsService } from '../../../services/validators.service';
 
@@ -52,7 +52,6 @@ export default class RegisterUserComponent {
   }
 
   onSubmit() {
-    console.warn(this.myForm.value);
     this.myForm.markAllAsTouched();
   }
 }
