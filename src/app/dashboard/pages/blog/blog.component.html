@@ -1,7 +1,7 @@
 <app-title [title]="blog()?.title"></app-title>
 @if(blog()) {
 <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
-  <div class="md:col-span-2 lg:col-span-2">
+  <div class="col-span-2">
     <div class="my-4 mx-4 block p-4 bg-slate-200 shadow rounded-xl">
       <div class="relative">
         <img
@@ -10,11 +10,6 @@
           class="md:w-full lg:w-[100%] h-auto object-cover mt-2 rounded-xl"
         />
         <div class="absolute top-4 right-4 p-1 rounded-full">
-          <!-- <img
-            [src]="isFavourite(blog()) ? 'heart-red.svg' : 'heart.svg'"
-            class="w-8 h-8 ml-auto cursor-pointer"
-            (click)="toggleFavourite(blog())"
-          /> -->
           <app-favourite-button
             [blog]="blog()!"
             [alreadyFavourite]="isFavourite(blog())"
@@ -24,7 +19,7 @@
       </div>
 
       <p class="mt-2 text-gray-400">
-        Published at: {{ blog()!.published_at | date : "dd/MM/yyyy HH:mm" }}
+        {{ blog()!.published_at | date : "dd/MM/yyyy HH:mm" }}
       </p>
       <p class="mt-2 text-black-300">
         {{ blog()!.summary }}
@@ -77,13 +72,13 @@
       </div>
     </div>
   </div>
-  <div class="md:col-span-1">
-    <div class="my-4 mx-4 block p-4 bg-slate-200 shadow rounded-xl h-[50%]">
+  <div class="col-span-1">
+    <div class="my-4 mx-4 block p-4 bg-slate-200 shadow rounded-xl h-[85vh]">
       <h2 class="text-xl font-bold mb-4">Available Blogs</h2>
-      <div class="overflow-y-auto h-[90%]">
+      <div class="overflow-y-auto h-[75vh] pr-2">
         @for(item of blogs; track $index) {
         <div
-          class="mb-4 p-2 hover:bg-slate-300 rounded-lg cursor-pointer"
+          class="mb-4 p-2 hover:bg-slate-300 rounded-lg cursor-pointer bg-slate-50"
           [class.bg-slate-300]="item.id === blog()?.id"
           (click)="goToBlog(item.id)"
           [routerLink]="['/dashboard/blog', item.id]"
